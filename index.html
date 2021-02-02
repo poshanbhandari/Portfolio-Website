@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page || Poshan Bhandari</title>
+	<!-- Meta tags are innformation of data  -->
+	<meta charset="utf-8">
+		<meta name="description" content="Portofolio">
+	   <meta name="keywords" content="Portofolio,Technology,CV">
+	   <meta name="author" content="Poshan Bhandari">
+	   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="CSS/headerandfooter.css">
+</head>
+
+<!-- Internal CSS starts -->
+<style>
+	
+	body
+	{
+		
+		background-color: #f1f1f1;
+
+	}
+
+	/*This is the Csss for images in the carousel*/
+	.images
+	{
+		width: 1800px;
+		height: 1000px;
+		margin-left: 200px;
+
+
+	}
+
+	.intro
+	{
+		
+		width: 400px;
+		margin-left: 900px;
+		font-style: italic;
+		font-size: 28px;
+		
+	}
+	/*this css work for image below the carousel*/
+	.image
+	{
+		
+		margin-top: 20px;
+		margin-left: 200px;
+	}
+
+	/*This css works for the text in the introduction */
+	.text
+	{
+		width: 500px;
+		font-size: 24px;
+		margin-top: 100px;
+		position: absolute;top:1100px; 
+		margin-left: 1000px;
+		
+	}
+	/*This css works for the text in the hobbies part*/
+	.text1
+	{
+		box-shadow: 0 4px 12px 0;
+		padding: 20px;
+	}
+	/*it makes the effect of hover effect*/
+	.text1:hover
+	{
+		background-color: #f1f1f1;
+		font-style: italic;
+		background-color: teal;
+		color: white;
+
+		
+	}
+	.text2
+	{
+
+		box-shadow: 0 4px 12px 0;
+		padding: 20px;
+	}
+	.text2:hover
+	{
+		background-color: teal;
+		font-style: italic;
+		color: white;
+			
+	}
+	.welcome
+	{
+		position: absolute;top: 400px;
+		margin-left: 750px;
+		color: white;
+		font-size: 55px;
+		box-shadow: 0 4px 8px 0;
+		width: 800px;
+		padding: 5px;
+		text-align: center;
+	}
+	.welcome:hover
+	{
+		background-color: teal;
+	}
+	.btn1
+	{	font-size: 45px;
+		background-color: black;
+		color:white;
+		position: absolute;top: 500px;
+		margin-left: 150px;
+	}
+	.btn2
+	{
+		font-size: 45px;
+		background-color: black;
+		color:white;
+		position: absolute;top: 500px;
+		margin-left: 2000px;
+
+	}
+
+/*Internal CSS ends
+</style>
+
+<body>
+<!-- div menu wraps tha navigation bar -->
+	<div class="menu"> 
+
+		<div class ="navbar">
+			<img  class ="leftside" src= "Images/logo2.png" alt= "LOGO" style="width:50px;">
+       
+          <a class= "atag" href="index.html">HOME</a>
+          <a class= "atag" href="Pages/Blog.html">BLOG</a>
+          <a class= "atag" href="Pages/Research.html">RESEARCH</a>
+          <a class= "atag" href="Pages/CV.html">CV</a></li>
+          <a class= "atag" href="Pages/Contactus.html">CONTACT</a>
+      <!--
+      end of navbar  -->
+  </div>
+  <!-- End of menu div -->
+</div>
+
+
+     
+
+<!-- Div for carousel effect -->
+	<div class ="carousal">
+
+		<img class = "images" src="Images/techmind1.jpg">
+		<img class = "images" src="Images/techmind2.jpg">
+		<img  class ="images" src="Images/techmind3.jpg">
+		<div class="welcome">
+			<h2>Hello !!<br>Welcome to The portfolio website of Poshan Bhandari</h2>
+		</div>
+		<button class="btn1" onclick="change(-1)">&lt;</button>
+	
+		<button class="btn2" onclick="change(1)">&gt;</button>
+<!--div carousel ends here  -->
+</div>
+
+	
+		<!--image div wraps the entire divs  -->
+	<div class = "image">
+		<img src ="Images/flower1.jpg" alt= "Laptop" style="width: 1800px;"> 
+			
+			<div class ="text">
+					<div class ="text1">
+
+					<h1>My Introduction</h1><hr>
+					<p>Hello!!
+					I am Poshan Bhandari.I am recently doing my graduation in BIT from Islington college.</p>
+				</div><br><br>
+
+				<div class ="text2">
+					<h2>Hobbies</h2><hr>
+					<p>I usually like to play cricket.I am fond of Technology.I like to do research aout new technology, Also I love nature. My favorite animal is Dog.</p>
+
+
+				
+				</div>
+
+			</div>
+		
+		</div>
+
+
+
+<!-- Footer starts -->
+<footer class ="footer">
+	<br>
+
+	Poshan Bhandari<br>
+	&copy; Copyright 2019
+	
+
+</footer>
+<!-- Footer ends -->
+
+
+
+
+
+
+<!-- Script goees here -->
+
+	<script type="text/javascript">
+		//Script for carousel effect
+
+    //Initializing the index to zero
+		index = 0;
+
+		
+		function carousel(n){
+			var imgs = document.getElementsByClassName('images');
+
+			if (n> imgs.length-1) {
+				index= 0;
+			}
+
+			if(n<0){
+				index= imgs.length - 1;
+			} 
+
+			for (var i = 0; i <= imgs.length-1; i++) {
+				imgs[i].style.display="none";
+			}
+
+			imgs[index].style.display="block";
+		}
+
+		//function for automatic change
+		function automatic(){
+			index++;
+			carousel(index);
+			setTimeout(automatic, 4000);
+		}
+
+		    automatic();//calling the automatic function
+
+// Function for change 
+		function change(n){
+			index+= n;
+			carousel(index);
+		}
+	</script>
+
+</body>
+
+
